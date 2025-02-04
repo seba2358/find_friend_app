@@ -58,11 +58,12 @@ if(age and edu_level and fav_animals and fav_place and gender):
     percent_clusters = round((len(same_cluster_df) / len(all_df) * 100))
     st.write(f"Stanowicie ok. {percent_clusters}% wszystkich ankietowanych!")
 
+    same_without_cluster_df = same_cluster_df.drop('Cluster', axis=1)
     st.header('Więcej o Twoich znajomych')
-    min_value = min(10, len(same_cluster_df))
+    min_value = min(10, len(same_without_cluster_df))
     st.subheader(f'{min_value} losowych wierszy')
     st.dataframe(
-        same_cluster_df.sample(min_value),
+        same_without_cluster_df.sample(min_value),
         use_container_width=True,
         hide_index=True
     )
