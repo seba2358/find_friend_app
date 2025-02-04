@@ -1,5 +1,7 @@
 json
-streamlit as st
-pandas as pd
+streamlit
+pandas
 pycaret.clustering
-plotly.express as px
+plotly.express
+openai
+dotenv
